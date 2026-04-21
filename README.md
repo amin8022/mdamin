@@ -2,7 +2,7 @@ Based on the content of the website, here is a professional and comprehensive **
 
 ***
 
-# Personal Portfolio - Md. Aminul Islam
+# Personal Portfolio - Md. Amin
 
 This is the source code for my personal portfolio website, designed to showcase my skills, experience, and projects as a software developer.
 
