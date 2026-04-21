@@ -1,207 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MD AMIN | M.Sc Botany</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Admin | Researcher & Botanist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-light: #34d399;
+            --bg-dark: #0b0f1a;
+            --card-bg: #161b2a;
+            --text-white: #f8fafc;
+            --text-gray: #94a3b8;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-white); line-height: 1.7; overflow-x: hidden; }
+        
+        /* Navbar */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 10%; background: rgba(11, 15, 26, 0.8);
+            backdrop-filter: blur(15px); position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { text-decoration: none; color: var(--text-gray); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
 
-body{
-  background:#0b1220;
-  color:#fff;
-  overflow-x:hidden;
-}
+        /* Hero */
+        .hero {
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 0 20px;
+            background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+        }
+        .hero-content { max-width: 800px; }
+        .hero img {
+            width: 180px; height: 180px; border-radius: 50%; object-fit: cover;
+            border: 4px solid var(--primary); margin-bottom: 25px;
+            box-shadow: 0 0 50px rgba(16, 185, 129, 0.3);
+        }
+        .hero h1 { font-size: 4rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -2px; }
+        .hero h2 { color: var(--primary); font-weight: 400; font-size: 1.4rem; margin-bottom: 20px; }
+        .hero p { color: var(--text-gray); font-size: 1.1rem; margin-bottom: 30px; }
 
-/* Animated background */
-.bg{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background: radial-gradient(circle at top, #1e3a8a, #0b1220);
-  z-index:-1;
-}
+        /* Buttons */
+        .btn-group { display: flex; gap: 15px; justify-content: center; }
+        .btn {
+            padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600;
+            transition: 0.3s; display: inline-flex; align-items: center; gap: 10px;
+        }
+        .btn-primary { background: var(--primary); color: #000; }
+        .btn-outline { border: 1px solid var(--text-gray); color: var(--text-white); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
-/* Navbar */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 50px;
-  background:rgba(2,6,23,0.8);
-  backdrop-filter: blur(10px);
-  position:sticky;
-  top:0;
-}
-nav h2{color:#38bdf8;}
-nav a{
-  color:#cbd5f5;
-  margin-left:20px;
-  text-decoration:none;
-  transition:0.3s;
-}
-nav a:hover{color:#38bdf8;}
+        /* Container & Sections */
+        .container { max-width: 1100px; margin: 0 auto; padding: 100px 20px; }
+        .section-header { margin-bottom: 50px; }
+        .section-header h3 { font-size: 2rem; border-left: 4px solid var(--primary); padding-left: 15px; }
 
-/* Hero */
-.hero{
-  height:90vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
+        /* Cards */
+        .card { background: var(--card-bg); padding: 35px; border-radius: 20px; border: 1px solid var(--glass); }
+        
+        /* Skills Grid */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .skill-box { background: var(--glass); padding: 20px; border-radius: 12px; transition: 0.3s; }
+        .skill-box:hover { background: rgba(16, 185, 129, 0.05); border: 1px solid var(--primary); }
+        .skill-box i { color: var(--primary); font-size: 1.5rem; margin-bottom: 15px; display: block; }
+        .skill-box h4 { margin-bottom: 10px; }
+        .skill-box ul { list-style: none; color: var(--text-gray); font-size: 0.9rem; }
 
-.hero img{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  border:4px solid #38bdf8;
-  object-fit:cover;
-  box-shadow:0 0 30px #38bdf8;
-  margin-bottom:20px;
-}
+        /* Education */
+        .edu-item { position: relative; padding-left: 30px; border-left: 2px solid var(--glass); margin-bottom: 30px; }
+        .edu-item::before {
+            content: ''; position: absolute; left: -9px; top: 0;
+            width: 16px; height: 16px; background: var(--primary); border-radius: 50%;
+        }
+        .edu-date { font-size: 0.85rem; color: var(--primary); font-weight: 700; }
 
-.hero h1{
-  font-size:55px;
-}
-.hero p{
-  font-size:20px;
-  color:#cbd5f5;
-  margin-top:10px;
-}
+        /* Research */
+        .research-card { margin-bottom: 20px; transition: 0.3s; cursor: default; }
+        .research-card:hover { border-color: var(--primary-light); }
+        .tag { background: rgba(16, 185, 129, 0.1); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin-top: 10px; display: inline-block; }
 
-/* Button */
-.btn{
-  margin-top:20px;
-  padding:10px 20px;
-  background:#38bdf8;
-  color:#000;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:bold;
-}
+        /* Footer */
+        footer { padding: 50px 0; text-align: center; border-top: 1px solid var(--glass); }
+        .social-links { margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; }
+        .social-links a { color: var(--text-gray); font-size: 1.5rem; transition: 0.3s; }
+        .social-links a:hover { color: var(--primary); }
 
-/* Section */
-section{
-  max-width:1000px;
-  margin:auto;
-  padding:60px 20px;
-}
-
-h2{
-  border-left:5px solid #38bdf8;
-  padding-left:10px;
-  margin-bottom:20px;
-}
-
-/* Cards */
-.card{
-  background:rgba(30,41,59,0.8);
-  padding:20px;
-  border-radius:12px;
-  margin-top:15px;
-  box-shadow:0 0 15px rgba(56,189,248,0.1);
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-5px);
-}
-
-/* Skills */
-.skills span{
-  display:inline-block;
-  background:#1d4ed8;
-  padding:8px 12px;
-  margin:5px;
-  border-radius:6px;
-}
-
-/* Contact */
-.contact{
-  font-size:18px;
-}
-
-/* Footer */
-footer{
-  text-align:center;
-  padding:20px;
-  background:#020617;
-  color:#94a3b8;
-  margin-top:40px;
-}
-</style>
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            nav ul { display: none; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="bg"></div>
+    <nav>
+        <div class="logo">MD AMIN.</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Technical Skills</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav>
-  <h2>MD AMIN</h2>
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#research">Research</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <img src="amin.jpeg" alt="Md. Admin">
+            <h1>Md. Admin</h1>
+            <h2>M.Sc. in Botany | Plant Researcher</h2>
+            <p>Dedicated to exploring the intersection of plant biodiversity, environmental physiology, and sustainable ecology through rigorous scientific inquiry.</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Academic CV</a>
+            </div>
+        </div>
+    </header>
 
-<!-- HERO -->
-<div class="hero">
-  <img src="amin.jpeg" alt="MD AMIN">
-  <h1>MD AMIN</h1>
-  <p>M.Sc in Botany | Plant Science Researcher | Student</p>
-  <button class="btn">Download CV (Coming Soon)</button>
-</div>
+    <div class="container" id="about">
+        <div class="section-header">
+            <h3>Professional Summary</h3>
+        </div>
+        <div class="card">
+            <p>I am a detail-oriented researcher currently pursuing an M.Sc in Botany. My passion lies in understanding the complex mechanisms of plant life and their responses to environmental changes. With a strong foundation in plant physiology and lab-based research, I am committed to contributing to the preservation of biodiversity and exploring the medicinal potential of flora. I aim to utilize my scientific expertise to address global challenges like climate change and food security.</p>
+        </div>
+    </div>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    I am MD AMIN, currently pursuing M.Sc in Botany. I am passionate about plant science, biodiversity, and scientific research. My goal is to contribute to botanical research and environmental sustainability.
-  </div>
-</section>
+    <!-- EDUCATION -->
+    <section class="container" id="education" style="padding-top: 0;">
+        <div class="section-header">
+            <h3>Academic Background</h3>
+        </div>
+        <div class="edu-item">
+            <div class="edu-date">2024 - Present</div>
+            <h4>Master of Science in Botany</h4>
+            <p>Specializing in Plant Science & Research Methodology. Focus on advanced biodiversity and environmental impact.</p>
+        </div>
+        <div class="edu-item">
+            <div class="edu-date">2019 - 2023</div>
+            <h4>Bachelor of Science in Botany</h4>
+            <p>Graduated with honors. Developed core competencies in plant anatomy, taxonomy, and biochemistry.</p>
+        </div>
+    </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="card skills">
-    <span>Botany Research</span>
-    <span>Plant Physiology</span>
-    <span>Data Analysis</span>
-    <span>Lab Work</span>
-    <span>Basic Web Development</span>
-  </div>
-</section>
+    <!-- SKILLS -->
+    <section class="container" id="skills" style="padding-top: 0;">
+        <div class="section-header">
+            <h3>Technical Expertise</h3>
+        </div>
+        <div class="grid-3">
+            <div class="skill-box">
+                <i class="fas fa-microscope"></i>
+                <h4>Laboratory Skills</h4>
+                <ul>
+                    <li>• Plant Tissue Culture</li>
+                    <li>• Morphological Analysis</li>
+                    <li>• Microscopy & Staining</li>
+                    <li>• Sample Collection & Preservation</li>
+                </ul>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-flask"></i>
+                <h4>Research Areas</h4>
+                <ul>
+                    <li>• Plant Physiology</li>
+                    <li>• Medicinal Plant Taxonomy</li>
+                    <li>• Environmental Ecology</li>
+                    <li>• Biodiversity Conservation</li>
+                </ul>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-laptop-code"></i>
+                <h4>Digital & Analytics</h4>
+                <ul>
+                    <li>• Scientific Data Analysis</li>
+                    <li>• Basic Web Development</li>
+                    <li>• Documentation & Reporting</li>
+                    <li>• Microsoft Office Suite</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<!-- RESEARCH -->
-<section id="research">
-  <h2>Research Interest</h2>
-  <div class="card">
-    <ul>
-      <li>Plant Biodiversity</li>
-      <li>Medicinal Plants</li>
-      <li>Ecology & Environment</li>
-      <li>Climate Impact on Plants</li>
-    </ul>
-  </div>
-</section>
+    <!-- RESEARCH -->
+    <section class="container" id="research" style="padding-top: 0;">
+        <div class="section-header">
+            <h3>Current Research Focus</h3>
+        </div>
+        <div class="grid-3">
+            <div class="card research-card">
+                <h4>Climate Change & Plant Growth</h4>
+                <p>Investigating how rising CO2 levels affect the physiological growth patterns of local medicinal flora.</p>
+                <span class="tag">Ecology</span>
+            </div>
+            <div class="card research-card">
+                <h4>Bio-Activity in Medicinal Plants</h4>
+                <p>Studying the chemical compounds found in endemic plants and their potential for pharmaceutical use.</p>
+                <span class="tag">Medicinal Botany</span>
+            </div>
+        </div>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card contact">
-    📧 Email: <b>mdahowladar@gmail.com</b>
-  </div>
-</section>
+    <!-- CONTACT -->
+    <section class="container" id="contact" style="padding-top: 0; text-align: center;">
+        <div class="section-header">
+            <h3>Let's Connect</h3>
+        </div>
+        <div class="card">
+            <p style="margin-bottom: 20px;">I am open to collaborations in research, environmental projects, and academic discussions.</p>
+            <h4 style="color: var(--primary); font-size: 1.5rem;">mdahowladar@gmail.com</h4>
+        </div>
+    </section>
 
-<footer>
-  © 2026 MD AMIN | Built with GitHub Pages
-</footer>
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 Md. Admin | Botanical Researcher Portfolio</p>
+    </footer>
 
 </body>
 </html>
