@@ -640,6 +640,187 @@
 
   .footer-social-link:hover { border-color: var(--accent); transform: translateY(-2px); }
 
+
+  /* GALLERY */
+  #gallery { background: var(--surface); }
+
+  .gallery-filter {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.5rem 1.3rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+
+  .gallery-grid {
+    columns: 3;
+    column-gap: 1.2rem;
+  }
+
+  .gallery-item {
+    break-inside: avoid;
+    margin-bottom: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    transition: all 0.4s;
+  }
+
+  .gallery-item:hover { border-color: var(--accent); transform: scale(1.01); }
+
+  .gallery-item img {
+    width: 100%;
+    display: block;
+    filter: grayscale(15%);
+    transition: filter 0.4s, transform 0.4s;
+  }
+
+  .gallery-item:hover img { filter: grayscale(0%); transform: scale(1.05); }
+
+  .gallery-placeholder {
+    width: 100%;
+    background: var(--card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    gap: 0.6rem;
+    border: 2px dashed rgba(200,169,110,0.2);
+    transition: all 0.3s;
+    padding: 2rem 1rem;
+  }
+
+  .gallery-placeholder:hover {
+    border-color: var(--accent);
+    background: rgba(200,169,110,0.04);
+  }
+
+  .gallery-placeholder .ph-icon { font-size: 2rem; }
+  .gallery-placeholder .ph-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  .gallery-placeholder .ph-cat {
+    font-size: 0.68rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,15,0.85) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+  }
+
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+  .gallery-overlay-text {
+    font-size: 0.75rem;
+    color: var(--text);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .gallery-overlay-cat {
+    font-size: 0.65rem;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* LIGHTBOX */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+  }
+
+  .lightbox.open { display: flex; }
+
+  .lightbox img {
+    max-width: 85vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border: 1px solid var(--border);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem; right: 2rem;
+    font-size: 2rem;
+    color: var(--muted);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: sans-serif;
+    transition: color 0.2s;
+  }
+
+  .lightbox-close:hover { color: var(--accent); }
+
+  .lightbox-caption {
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Upload hint banner */
+  .upload-hint {
+    background: rgba(200,169,110,0.07);
+    border: 1px dashed rgba(200,169,110,0.3);
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .upload-hint span { color: var(--accent); font-size: 1.2rem; }
+
+  @media (max-width: 900px) {
+    .gallery-grid { columns: 2; }
+  }
+
+  @media (max-width: 500px) {
+    .gallery-grid { columns: 1; }
+  }
+
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
@@ -683,6 +864,7 @@
     <li><a href="#education">Education</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -929,6 +1111,94 @@
   </div>
 </section>
 
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="fade-in">
+    <div class="section-label">Visual Stories</div>
+    <h2 class="section-title">Photo Gallery</h2>
+  </div>
+
+  <div class="upload-hint fade-in">
+    <span>📌</span>
+    <div>
+      GitHub-এ ছবি upload করে <code style="color:var(--accent); background:rgba(200,169,110,0.1); padding:0.1rem 0.4rem;">images/</code> ফোল্ডারে রাখুন এবং নিচের <code style="color:var(--accent); background:rgba(200,169,110,0.1); padding:0.1rem 0.4rem;">src="images/your-photo.jpg"</code> দিয়ে replace করুন।
+    </div>
+  </div>
+
+  <div class="gallery-filter fade-in">
+    <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
+    <button class="filter-btn" onclick="filterGallery('personal', this)">👤 Personal</button>
+    <button class="filter-btn" onclick="filterGallery('travel', this)">✈️ Travel</button>
+    <button class="filter-btn" onclick="filterGallery('photography', this)">📷 Photography</button>
+    <button class="filter-btn" onclick="filterGallery('academic', this)">🎓 Academic</button>
+  </div>
+
+  <div class="gallery-grid fade-in" id="galleryGrid">
+
+    <!-- PERSONAL -->
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <div class="gallery-placeholder" style="height:280px;">
+        <div class="ph-icon">👤</div>
+        <div class="ph-cat">Personal</div>
+        <div class="ph-label">Photo 1</div>
+        <div style="font-size:0.65rem; color:var(--muted); margin-top:0.3rem;">src="images/personal-1.jpg" দিয়ে replace করুন</div>
+      </div>
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
+      </div>
+    </div>
+
+    <!-- TRAVEL -->
+    <div class="gallery-item" data-cat="travel" onclick="openLightbox(this)">
+      <div class="gallery-placeholder" style="height:280px;">
+        <div class="ph-icon">✈️</div>
+        <div class="ph-cat">Travel</div>
+        <div class="ph-label">Travel Photo 1</div>
+        <div style="font-size:0.65rem; color:var(--muted); margin-top:0.3rem;">src="images/travel-1.jpg" দিয়ে replace করুন</div>
+      </div>
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Travel</div><div class="gallery-overlay-text">My Journey</div></div>
+      </div>
+    </div>
+
+    <!-- PHOTOGRAPHY -->
+    <div class="gallery-item" data-cat="photography" onclick="openLightbox(this)">
+      <div class="gallery-placeholder" style="height:280px;">
+        <div class="ph-icon">📷</div>
+        <div class="ph-cat">Photography</div>
+        <div class="ph-label">Shot 1</div>
+        <div style="font-size:0.65rem; color:var(--muted); margin-top:0.3rem;">src="images/photo-1.jpg" দিয়ে replace করুন</div>
+      </div>
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Photography</div><div class="gallery-overlay-text">My Work</div></div>
+      </div>
+    </div>
+
+    <!-- ACADEMIC -->
+    <div class="gallery-item" data-cat="academic" onclick="openLightbox(this)">
+      <div class="gallery-placeholder" style="height:280px;">
+        <div class="ph-icon">🎓</div>
+        <div class="ph-cat">Academic</div>
+        <div class="ph-label">Academic Photo 1</div>
+        <div style="font-size:0.65rem; color:var(--muted); margin-top:0.3rem;">src="images/academic-1.jpg" দিয়ে replace করুন</div>
+      </div>
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Academic</div><div class="gallery-overlay-text">College Life</div></div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="fade-in">
@@ -1028,6 +1298,44 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Gallery Filter
+  function filterGallery(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      if (cat === 'all' || item.dataset.cat === cat) {
+        item.style.display = 'block';
+        item.style.opacity = '0';
+        setTimeout(() => { item.style.transition = 'opacity 0.4s'; item.style.opacity = '1'; }, 50);
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // Lightbox
+  function openLightbox(el) {
+    const img = el.querySelector('img');
+    if (!img) return;
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightboxImg').src = img.src;
+    const cat = el.dataset.cat;
+    const txt = el.querySelector('.gallery-overlay-text');
+    document.getElementById('lightboxCaption').textContent = (txt ? txt.textContent : '') + ' · ' + cat;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox({target: document.getElementById('lightbox')}); });
+
 </script>
 </body>
 </html>
