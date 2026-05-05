@@ -1119,13 +1119,6 @@
     <h2 class="section-title">Photo Gallery</h2>
   </div>
 
-  <div class="upload-hint fade-in">
-    <span>📌</span>
-    <div>
-      GitHub-এ ছবি upload করে <code style="color:var(--accent); background:rgba(200,169,110,0.1); padding:0.1rem 0.4rem;">images/</code> ফোল্ডারে রাখুন এবং নিচের <code style="color:var(--accent); background:rgba(200,169,110,0.1); padding:0.1rem 0.4rem;">src="images/your-photo.jpg"</code> দিয়ে replace করুন।
-    </div>
-  </div>
-
   <div class="gallery-filter fade-in">
     <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
     <button class="filter-btn" onclick="filterGallery('personal', this)">👤 Personal</button>
@@ -1136,14 +1129,86 @@
 
   <div class="gallery-grid fade-in" id="galleryGrid">
 
-    <!-- PERSONAL -->
+    <!-- PERSONAL PHOTOS -->
     <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
-      <div class="gallery-placeholder" style="height:280px;">
-        <div class="ph-icon">👤</div>
-        <div class="ph-cat">Personal</div>
-        <div class="ph-label">Photo 1</div>
-        <div style="font-size:0.65rem; color:var(--muted); margin-top:0.3rem;">src="images/personal-1.jpg" দিয়ে replace করুন</div>
+      <img src="images/p1.jpg" alt="Personal Photo 1" style="width:100%; height:260px; object-fit:cover; display:block;">
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
       </div>
+    </div>
+
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <img src="images/p2.jpg" alt="Personal Photo 2" style="width:100%; height:320px; object-fit:cover; display:block;">
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <img src="images/p3.jpg" alt="Personal Photo 3" style="width:100%; height:280px; object-fit:cover; display:block;">
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <img src="images/p4.jpg" alt="Personal Photo 4" style="width:100%; height:240px; object-fit:cover; display:block;">
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <img src="images/p5.jpg" alt="Personal Photo 5" style="width:100%; height:360px; object-fit:cover; display:block;">
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <img src="images/p6.jpg" alt="Personal Photo 6" style="width:100%; height:300px; object-fit:cover; display:block;">
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <img src="images/p7.jpg" alt="Personal Photo 7" style="width:100%; height:250px; object-fit:cover; display:block;">
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <img src="images/p8.jpg" alt="Personal Photo 8" style="width:100%; height:340px; object-fit:cover; display:block;">
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <img src="images/p9.jpg" alt="Personal Photo 9" style="width:100%; height:270px; object-fit:cover; display:block;">
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <img src="images/p10.jpg" alt="Personal Photo 10" style="width:100%; height:230px; object-fit:cover; display:block;">
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <img src="images/p11.jpg" alt="Personal Photo 11" style="width:100%; height:290px; object-fit:cover; display:block;">
+      <div class="gallery-overlay">
+        <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="personal" onclick="openLightbox(this)">
+      <img src="images/p12.jpg" alt="Personal Photo 12" style="width:100%; height:310px; object-fit:cover; display:block;">
       <div class="gallery-overlay">
         <div><div class="gallery-overlay-cat">Personal</div><div class="gallery-overlay-text">My Moment</div></div>
       </div>
@@ -1154,7 +1219,7 @@
       <div class="gallery-placeholder" style="height:280px;">
         <div class="ph-icon">✈️</div>
         <div class="ph-cat">Travel</div>
-        <div class="ph-label">Travel Photo 1</div>
+        <div class="ph-label">Travel Photo</div>
         <div style="font-size:0.65rem; color:var(--muted); margin-top:0.3rem;">src="images/travel-1.jpg" দিয়ে replace করুন</div>
       </div>
       <div class="gallery-overlay">
@@ -1164,10 +1229,10 @@
 
     <!-- PHOTOGRAPHY -->
     <div class="gallery-item" data-cat="photography" onclick="openLightbox(this)">
-      <div class="gallery-placeholder" style="height:280px;">
+      <div class="gallery-placeholder" style="height:300px;">
         <div class="ph-icon">📷</div>
         <div class="ph-cat">Photography</div>
-        <div class="ph-label">Shot 1</div>
+        <div class="ph-label">Photography Shot</div>
         <div style="font-size:0.65rem; color:var(--muted); margin-top:0.3rem;">src="images/photo-1.jpg" দিয়ে replace করুন</div>
       </div>
       <div class="gallery-overlay">
@@ -1177,10 +1242,10 @@
 
     <!-- ACADEMIC -->
     <div class="gallery-item" data-cat="academic" onclick="openLightbox(this)">
-      <div class="gallery-placeholder" style="height:280px;">
+      <div class="gallery-placeholder" style="height:270px;">
         <div class="ph-icon">🎓</div>
         <div class="ph-cat">Academic</div>
-        <div class="ph-label">Academic Photo 1</div>
+        <div class="ph-label">Academic Photo</div>
         <div style="font-size:0.65rem; color:var(--muted); margin-top:0.3rem;">src="images/academic-1.jpg" দিয়ে replace করুন</div>
       </div>
       <div class="gallery-overlay">
@@ -1188,7 +1253,6 @@
       </div>
     </div>
 
-  </div>
   </div>
 </section>
 
